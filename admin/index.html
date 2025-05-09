@@ -5,5 +5,12 @@
     <title>Admin Panel</title>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </head>
-  <body></body>
+  <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+      document.addEventListener("DOMContentLoaded", function () {
+        CMS.init();
+      });
+    </script>
+  </body>
 </html>
