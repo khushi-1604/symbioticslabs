@@ -589,7 +589,10 @@ body {
   align-items: center;
   justify-content: space-between; /* Distribute space vertically */
 }
-
+.product-card:hover {
+  transform: scale(1.1) translateX(5px);
+  cursor: pointer;
+}
 .sale-badge {
   position: absolute;
   top: 0;
@@ -764,6 +767,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Pushes meta info to bottom */
+}
+.article-card:hover {
+  transform: scale(1.1) translateX(5px);
+  cursor: pointer;
 }
 
 .article-type {
