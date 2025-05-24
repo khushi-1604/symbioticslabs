@@ -1,0 +1,1093 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scroll due to absolute positioning */
+}
+
+body.no-scroll {
+  overflow: hidden; /* Prevent background scrolling when menu is open */
+}
+
+/* Top Bar Styling - Hidden by default on mobile */
+.top-bar {
+  background-color: #4caf50; /* Green background */
+  color: white;
+  padding: 8px 5%; /* Adjusted padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-bar-item {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-item:last-child {
+  margin-right: 0;
+}
+
+.top-bar-item img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  filter: brightness(0) invert(1); /* Makes icons white */
+}
+
+/* Header Styling - Visible on desktop, main mobile header when menu is closed */
+header {
+  background-color: white;
+  padding: 15px 5%; /* Adjusted padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Black shading for bottom border */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  position: sticky;
+  top: 0; /* For z-index context */
+  z-index: 1000; /* Ensure header is above content */
+}
+
+.logo img {
+  height: 40px; /* Adjust logo size */
+  width: auto;
+}
+
+/* Hamburger Menu Icon - Hidden by default on desktop */
+.menu-toggle {
+  display: none; /* MODIFIED: Hidden on desktop */
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  justify-content: space-between;
+  position: relative; /* For bar positioning */
+  z-index: 1001; /* Ensure toggle is above menu */
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #4caf50; /* Green bars */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger to X transformation */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Navigation and Dealer Button Container (Desktop) */
+/* ADDED: New container for desktop navigation */
+.desktop-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+nav ul li {
+  margin-left: 25px;
+  position: relative; /* For dropdown indicators */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a:hover {
+  color: #4caf50;
+}
+
+nav ul li a.has-dropdown::after {
+  content: "▼"; /* Dropdown indicator */
+  font-size: 0.6em;
+  margin-left: 5px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a.has-dropdown:hover::after {
+  transform: rotate(180deg);
+}
+
+.dealer-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-left: 25px; /* Space from nav items */
+}
+
+.dealer-button:hover {
+  background-color: #45a049;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 5%; /* Adjusted padding */
+  background-color: white; /* Light background for the section */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  text-align: center; /* Default for mobile */
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 30px;
+  text-align: left; /* Align text to left */
+}
+
+.hero-content h1 {
+  font-size: 2.8em;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align buttons to start */
+}
+
+.hero-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.hero-button:hover {
+  background-color: #45a049;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-image video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.mobile-menu-container {
+  display: none;
+}
+
+/* Responsive Adjustments for Mobile (<= 768px) */
+@media (max-width: 768px) {
+  /* MODIFIED: Hide desktop top bar and desktop navigation container on mobile */
+  .top-bar,
+  .desktop-nav-container {
+    display: none;
+  }
+
+  header {
+    /* MODIFIED: Keep header visible for logo and hamburger (when menu is closed) */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* MODIFIED: Show hamburger on mobile */
+  .menu-toggle {
+    display: flex; /* This makes the hamburger visible on mobile */
+  }
+
+  /* Mobile Menu Container - Full screen overlay */
+  .mobile-menu-container {
+    display: none; /* MODIFIED: Hidden by default */
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 0; /* MODIFIED: No padding on container itself */
+    z-index: 998; /* Below header, above content */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Vertically center content */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    transform: translateX(100%); /* ADDED: Start off-screen to the right */
+    transition: transform 0.3s ease-in-out; /* ADDED: Smooth slide-in animation */
+  }
+
+  .mobile-menu-container.menu-open {
+    display: flex; /* MODIFIED: Show when open */
+    transform: translateX(0); /* ADDED: Slide into view */
+  }
+
+  /* ADDED: Header for the Mobile Menu (Logo and Close Button) */
+  .mobile-menu-header {
+    display: flex; /* Show on mobile */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 5%; /* Match desktop header padding */
+    background-color: white; /* Same as header */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: absolute; /* Position within the fixed menu */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's above menu content */
+  }
+
+  .mobile-menu-header .logo img {
+    height: 40px; /* Match header logo size */
+  }
+
+  /* MODIFIED: Style for the close button (X) inside the menu */
+  .close-menu {
+    font-size: 2.5em; /* Larger X */
+    color: #4caf50; /* Green X */
+    cursor: pointer;
+    line-height: 1; /* Remove extra space around X */
+    padding: 5px; /* Make it easier to tap */
+  }
+
+  /* Mobile specific top bar info (visible only inside mobile menu) */
+  .mobile-top-bar-info {
+    display: flex; /* MODIFIED: Show */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white; /* Green background */
+    color: green;
+    padding: 15px 0;
+    margin-bottom: 20px; /* Space between top bar and nav */
+    margin-top: 80px; /* ADDED: Push down to clear mobile-menu-header */
+  }
+
+  .mobile-top-bar-item {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+  }
+
+  .mobile-top-bar-item img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+  }
+
+  /* Navigation list styling within mobile menu */
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    width: 100%;
+    margin-top: 0; /* Remove default top margin */
+    padding: 0 5%; /* Add horizontal padding to nav list */
+  }
+  nav ul li {
+    margin: 15px 0; /* Adjust vertical margin for better spacing */
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li a {
+    padding: 12px 0; /* Increase clickable area */
+    width: 100%;
+    justify-content: center; /* Center nav links */
+    font-size: 1.2em; /* Larger font size for mobile links */
+  }
+  /* "BECOME A DEALER" button at the end of the mobile nav list */
+  .dealer-button {
+    margin: 30px 0 0 0; /* Adjust margin for mobile menu */
+    width: 80%; /* Make button wider in menu */
+    max-width: 280px; /* Max width for button */
+    padding: 15px 25px; /* Larger padding for button */
+    font-size: 1.1em; /* Larger font size for button */
+    text-align: center;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse; /* Image above text on mobile */
+    padding: 30px 5%;
+  }
+  .hero-content {
+    padding-right: 0;
+    text-align: center; /* Center text on mobile */
+    margin-top: 30px;
+  }
+  .hero-content h1 {
+    font-size: 2em;
+  }
+  .hero-content p {
+    font-size: 0.9em;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-button {
+    width: 80%; /* Make buttons wider on mobile */
+  }
+}
+
+/* Adjustments for very small mobile screens (<= 480px) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+}
+/*SECTION 2*/
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light background for the section */
+  color: #333;
+}
+
+.section-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 5%; /* Padding around the section */
+  background-color: #f9f9f9; /* Light background */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 40px; /* Space between columns */
+}
+
+.section-2-illustration {
+  flex: 1;
+  min-width: 300px; /* Minimum width for the illustration column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Removed position: relative as icons are gone */
+}
+
+.section-2-illustration img {
+  max-width: 100%;
+  height: 35vw;
+  display: block;
+}
+
+/* Removed .illustration-icons and .icon-item styles */
+
+.section-2-content {
+  flex: 1;
+  min-width: 300px; /* Minimum width for the content column */
+  text-align: left;
+}
+
+.about-omnifert {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.about-omnifert .line {
+  width: 4px;
+  height: 20px;
+  background-color: #4caf50; /* Green line */
+  margin-right: 10px;
+}
+
+.about-omnifert span {
+  color: #4caf50; /* Green text */
+  font-weight: 600;
+  font-size: 0.95em;
+  text-transform: uppercase;
+}
+
+.section-2-content h2 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.paragraph-with-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.paragraph-with-line .line {
+  width: 4px;
+  height: 100%;
+  background-color: #4caf50;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.section-2-content p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.learn-more-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.learn-more-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-2 {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+  .section-2-illustration {
+    order: 1;
+    margin-bottom: 30px;
+  }
+  .section-2-content {
+    order: 2;
+    text-align: center;
+  }
+  .about-omnifert {
+    justify-content: center;
+  }
+  .section-2-content h2 {
+    font-size: 1.8em;
+  }
+  .learn-more-button {
+    width: 80%;
+    max-width: 300px;
+  }
+  .paragraph-with-line {
+    justify-content: center;
+  }
+  .paragraph-with-line .line {
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-2-content h2 {
+    font-size: 1.6em;
+  }
+}
+/*SECTION 4*/
+.products-section {
+  padding: 50px 5%; /* Padding around the entire section */
+  text-align: center;
+  background-color: #f9f9f9; /* White background for the product grid area */
+}
+
+.products-section .subtitle {
+  color: #4caf50; /* Green color for "Popular Choices" */
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.products-section .title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.product-grid {
+  display: grid;
+  /* Responsive grid: 4 columns normally, 2 on medium, 1 on small */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px; /* Space between grid items */
+  max-width: 1200px; /* Max width for the grid */
+  margin: 0 auto; /* Center the grid */
+  margin-bottom: 50px; /* Space before the button */
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: 20px;
+  text-align: center;
+  position: relative; /* For the SALE badge */
+  overflow: hidden; /* Ensure badge doesn't overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribute space vertically */
+}
+
+.sale-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #4caf50; /* Green background */
+  color: white;
+  padding: 5px 15px;
+  font-size: 0.8em;
+  font-weight: 700;
+  border-radius: 8px 0 8px 0; /* Rounded top-left and bottom-right */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.product-image {
+  width: 100%;
+  height: 180px; /* Fixed height for images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #f0f2f5; /* Placeholder background */
+  border-radius: 5px;
+  overflow: hidden; /* Hide parts of image if it overflows */
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure image fits without cropping */
+  display: block;
+}
+
+.product-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 1.2em;
+  color: #4caf50; /* Green for current price */
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.product-price .old-price {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.star-rating {
+  color: #ffd700; /* Gold color for stars */
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.our-catalogue-button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Allows padding and margin */
+}
+
+.our-catalogue-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .products-section {
+    padding: 30px 5%;
+  }
+  .products-section .title {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* 2 columns on smaller screens */
+    gap: 20px;
+  }
+  .product-card {
+    padding: 15px;
+  }
+  .product-image {
+    height: 150px;
+  }
+  .product-name {
+    font-size: 1em;
+  }
+  .product-price {
+    font-size: 1.1em;
+  }
+  .our-catalogue-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-section .title {
+    font-size: 1.8em;
+  }
+  .product-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 25px;
+  }
+}
+/*SECTION 5*/
+.articles-section {
+  padding: 80px 5%; /* Increased top padding for better spacing */
+  text-align: center;
+  background-color: white; /* White background for the section content area */
+}
+
+.articles-section .subtitle {
+  color: #4caf50; /* Green color for "Latest News & Blog" */
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.articles-section .title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 50px; /* Space before the article grid */
+  font-weight: 700;
+}
+
+.article-grid {
+  display: grid;
+  /* Responsive grid: 3 columns normally, 2 on medium, 1 on small */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* Space between grid items */
+  max-width: 1200px; /* Max width for the grid */
+  margin: 0 auto; /* Center the grid */
+}
+
+.article-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  overflow: hidden; /* Ensures image corners are rounded with parent */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card img {
+  width: 100%;
+  height: 220px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area, cropping if necessary */
+  display: block;
+}
+
+.article-content {
+  padding: 20px;
+  flex-grow: 1; /* Allows content to push footer down */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes meta info to bottom */
+}
+
+.article-type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.article-type .line {
+  width: 4px;
+  height: 16px;
+  background-color: #4caf50; /* Green line */
+  margin-right: 8px;
+}
+
+.article-type span {
+  color: #4caf50; /* Green text */
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+}
+
+.article-title {
+  font-size: 1.3em;
+  color: #333;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit title to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  color: #888;
+  border-top: 1px solid #eee; /* Separator line */
+  padding-top: 15px;
+  margin-top: 15px; /* Space above the separator */
+}
+
+.article-meta .date-info,
+.article-meta .comments-info {
+  display: flex;
+  align-items: center;
+}
+
+.article-meta img {
+  /* For date and comment icons */
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .articles-section {
+    padding: 60px 5%;
+  }
+  .articles-section .title {
+    font-size: 2.2em;
+  }
+  .article-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    ); /* Adjust min width for 2 columns */
+  }
+  .article-card img {
+    height: 200px;
+  }
+  .article-title {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .articles-section .title {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  .article-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 25px;
+  }
+  .article-card img {
+    height: 250px; /* Slightly taller image on single column */
+  }
+  .article-content {
+    padding: 15px;
+  }
+  .article-title {
+    font-size: 1.25em;
+  }
+  .article-meta img {
+    /* For date and comment icons */
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+}
+
+@media (max-width: 480px) {
+  .articles-section {
+    padding: 40px 5%;
+  }
+  .articles-section .title {
+    font-size: 1.8em;
+  }
+  .article-card img {
+    height: 200px;
+  }
+}
+/*FOOTER*/
+/* Footer Styling */
+.main-footer {
+  background-color: #f8f8f8; /* Light gray background as seen in the image */
+  padding: 60px 5%; /* Top/bottom padding and horizontal margin */
+  color: #555;
+  font-size: 0.95em;
+}
+
+.footer-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px; /* Space between columns */
+  margin-bottom: 40px;
+}
+
+.footer-col {
+  flex: 1; /* Allows columns to grow and shrink */
+  min-width: 200px; /* Minimum width for columns before wrapping */
+  max-width: 280px; /* Max width to prevent columns from becoming too wide */
+}
+
+.footer-info {
+  min-width: 250px; /* Give the info column a bit more space */
+}
+
+.footer-logo img {
+  max-height: 40px; /* Adjust as needed for your logo size */
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px; /* Space between social icons */
+  margin-top: 20px;
+}
+
+.social-links img {
+  width: 24px; /* Size of social icons */
+  height: 24px;
+  filter: brightness(1); /* Make icons dark gray/black */
+  transition: filter 0.3s ease;
+}
+
+.social-links img:hover {
+  filter: brightness(0.6); /* Slightly lighter on hover */
+}
+
+.footer-col h4 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px; /* Space for the underline */
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px; /* Length of the underline */
+  height: 2px;
+  background-color: #4caf50; /* Green underline */
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #4caf50;
+}
+
+.footer-contact .contact-item {
+  display: flex;
+  align-items: flex-start; /* Align text to the top if it wraps */
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.footer-contact .contact-item img {
+  width: 18px; /* Size of contact icons */
+  height: 18px;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  filter: brightness(0.3); /* Adjust to match the text color */
+}
+
+/* Footer Bottom Bar */
+.footer-bottom-bar {
+  border-top: 1px solid #eee; /* Thin line separator */
+  padding-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
+  color: #777;
+}
+
+.footer-bottom-bar .legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-bottom-bar .legal-links a {
+  text-decoration: none;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-bar .legal-links a:hover {
+  color: #4caf50;
+}
+
+.footer-bottom-bar .copyright {
+  margin-top: 10px; /* For mobile wrapping */
+}
+
+/* Floating Phone Icon */
+.floating-phone-icon {
+  position: fixed;
+  bottom: 25px; /* Distance from bottom */
+  right: 25px; /* Distance from right */
+  background-color: #4caf50; /* Green background */
+  border-radius: 50%;
+  width: 55px; /* Size of the circular button */
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it's above other content */
+  transition: transform 0.2s ease-in-out;
+}
+
+.floating-phone-icon:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.floating-phone-icon img {
+  width: 28px; /* Size of the phone icon inside the circle */
+  height: 28px;
+  filter: brightness(0) invert(1); /* Make icon white */
+}
+
+/* Responsive adjustments for the footer */
+@media (max-width: 768px) {
+  .footer-content-wrapper {
+    flex-direction: column; /* Stack columns vertically on mobile */
+    align-items: center; /* Center columns */
+    text-align: center;
+    gap: 30px; /* Reduce gap on mobile */
+  }
+
+  .footer-col {
+    min-width: unset; /* Remove min-width constraint for stacking */
+    width: 100%; /* Make columns full width */
+    max-width: 300px; /* Max width to keep content readable */
+  }
+
+  .footer-info {
+    margin-bottom: 20px; /* Space after logo/social */
+  }
+
+  .footer-col h4::after {
+    left: 50%; /* Center the underline on mobile */
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center; /* Center social icons */
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column; /* Stack legal links and copyright */
+    text-align: center;
+  }
+
+  .footer-bottom-bar .legal-links {
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom-bar .copyright {
+    margin-top: 0; /* Adjust margin */
+  }
+
+  .footer-contact .contact-item {
+    justify-content: center; /* Center contact items */
+  }
+}

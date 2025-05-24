@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbiotics Agritech - Empowering Indian Agriculture</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <img src="images/location.png" alt="Location Icon" />
+          <span>a-90 xyz place, raiyta gtjbaj Rajkot</span>
+        </div>
+        <div class="top-bar-item">
+          <img src="images/mail.png" alt="Email Icon" />
+          <span>Symbiotics@gmail.com</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item">
+          <img src="images/phone.png" alt="Phone Icon" />
+          <span>+91 56897432148</span>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Company Logo" />
+      </div>
+       <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="desktop-nav-container">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#" class="has-dropdown">Products</a></li>
+                    <li><a href="#" class="has-dropdown">R&D</a></li>
+                    <li><a href="#" class="has-dropdown">News & Articles</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="dealer-button">BECOME A DEALER</a>
+        </div>
+
+        <div class="mobile-menu-container" id="mobileMenuContainer">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Company Logo" />
+                </div>
+                <div class="close-menu" id="closeMenu">&times;</div>
+            </div>
+
+            <div class="mobile-top-bar-info">
+                 <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#" class="has-dropdown">Products</a></li>
+                    <li><a href="#" class="has-dropdown">R&D</a></li>
+                    <li><a href="#" class="has-dropdown">News & Articles</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="dealer-button">BECOME A DEALER</a>
+                            <div class="mobile-top-bar-item">
+                    <img src="images/location.png" alt="Location Icon" />
+                    <span>a-90 xyz place, raiyta gtjbaj Rajkot</span>
+                </div>
+                <div class="mobile-top-bar-item">
+                    <img src="images/mail.png" alt="Email Icon" />
+                    <span>Symbiotics@gmail.com</span>
+                </div>
+                <div class="mobile-top-bar-item">
+                    <img src="images/phone.png" alt="Phone Icon" />
+                    <span>+91 56897432148</span>
+                </div>
+            </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>
+          Empowering Indian <br />
+          Agriculture with Innovation
+        </h1>
+        <p>Sustainable agri-solutions for a better tomorrow.</p>
+        <div class="hero-buttons">
+          <a href="#" class="hero-button">EXPLORE PRODUCTS</a>
+          <a href="#" class="hero-button">BECOME A DEALER</a>
+        </div>
+      </div>
+     
+      <div class="hero-image">
+       <!-- <video autoplay loop muted>
+         <source src="images/hero-video.mp4" type="video/mp4">
+      </video>-->
+        <img src="images/farmer_spray.jpg" alt="Farmer Spraying Crops" style="height: 75vh;" />
+      </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenuContainer = document.getElementById('mobileMenuContainer');
+            const closeMenu = document.getElementById('closeMenu');
+            const body = document.body;
+
+            function toggleMobileMenu() {
+                mobileMenuContainer.classList.toggle('menu-open');
+                menuToggle.classList.toggle('open');
+                body.classList.toggle('no-scroll');
+            }
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMobileMenu);
+            }
+
+            if (closeMenu) {
+                closeMenu.addEventListener('click', toggleMobileMenu);
+            }
+        });
+    </script>
+    <!--SECTION 2-->
+    <section class="section-2">
+      <div class="section-2-illustration">
+        <img src="images/section2_girl.jpg" alt="Scientist Illustration" />
+      </div>
+      <div class="section-2-content">
+        <div class="about-omnifert">
+          <div class="line"></div>
+          <span>About Symbiotics</span>
+        </div>
+        <h2>
+          Lets help the crop <br />
+          of India
+        </h2>
+        <div class="paragraph-with-line">
+          <div class="line"></div>
+          <p>
+            The goal of OmniFert, an entirely indigenous Ghanaian enterprise, is
+            to increase agricultural production in Africa by giving farmers
+            access to reasonably priced fertilizers, setting up commercial-sized
+            farms to Produce crops like cassava, millet, sorghum, maize, soy,
+            etc. to fill in the gaps in the local supply. Additionally, evaluate
+            the soil on farms to precisely identify the fertilizer requirements
+            unique to each farm.
+          </p>
+        </div>
+        <a href="#" class="learn-more-button">LEARN MORE</a>
+      </div>
+    </section>
+
+    <!--SECTION 3-->
+    <section class="section-2" style="background-color: white">
+      <div class="section-2-content">
+        <div class="about-omnifert">
+          <div class="line"></div>
+          <span>Know Your Farming</span>
+        </div>
+        <h2>
+          Farmers working hard <br />
+          for our food
+        </h2>
+        <div class="paragraph-with-line">
+          <div class="line"></div>
+          <p>
+            Farming is the backbone of human civilization, providing the food we
+            eat and the resources we use daily. It involves cultivating land,
+            raising livestock, and growing crops like grains, fruits, and
+            vegetables. Modern farming often uses technology to increase
+            efficiency, but traditional methods are still vital in many regions.
+            Sustainable farming practices are crucial to protect the environment
+            and ensure food security for future generations. Farmers work
+            tirelessly, facing challenges like weather, pests, and market
+            fluctuations, yet their dedication feeds the world. It's a complex
+            and essential industry that connects us directly to the land and its
+            bounty.
+          </p>
+        </div>
+      </div>
+      <div class="section-2-illustration">
+        <img src="images/section3_im.jpg" alt="Scientist Illustration" />
+      </div>
+    </section>
+    <!--SECTION 4-->
+    <section class="products-section">
+      <p class="subtitle">Popular Choices</p>
+      <h2 class="title">Popular Products</h2>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="sale-badge">SALE</div>
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+1"
+              alt="Granular Potash"
+            />
+          </div>
+          <div class="product-name">Sunflower</div>
+          <div class="product-price">AM 5.95</div>
+          <div class="star-rating">★★★★☆</div>
+        </div>
+
+        <div class="product-card">
+          <div class="sale-badge">SALE</div>
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+2"
+              alt="Multiphos"
+            />
+          </div>
+          <div class="product-name">Multimedia</div>
+          <div class="product-price">
+            GHS 45.55 <span class="old-price">LS 15.65</span>
+          </div>
+          <div class="star-rating">★★★☆☆</div>
+        </div>
+
+        <div class="product-card">
+          <div class="sale-badge">SALE</div>
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+3"
+              alt="Muriate of Potash"
+            />
+          </div>
+          <div class="product-name">Gready Potash</div>
+          <div class="product-price">GD 85.42</div>
+          <div class="star-rating">★★★★☆</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+4"
+              alt="NPK 10:26:26"
+            />
+          </div>
+          <div class="product-name">KYS 52:14:86</div>
+          <div class="product-price">NPS 75.11</div>
+          <div class="star-rating">★★★★★</div>
+        </div>
+
+        <div class="product-card">
+          <div class="sale-badge">SALE</div>
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+5"
+              alt="NPK 11-22-21"
+            />
+          </div>
+          <div class="product-name">NPK 85-79-21</div>
+          <div class="product-price">GHS 85.44</div>
+          <div class="star-rating">★★★★☆</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+6"
+              alt="NPK 15-15-15"
+            />
+          </div>
+          <div class="product-name">KLE 15-15-15</div>
+          <div class="product-price">JHD 75.55</div>
+          <div class="star-rating">★★★☆☆</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+7"
+              alt="NPK 20-10-10"
+            />
+          </div>
+          <div class="product-name">NPK 20-10-10</div>
+          <div class="product-price">GHS 45.00</div>
+          <div class="star-rating">★★★★☆</div>
+        </div>
+
+        <div class="product-card">
+          <div class="sale-badge">SALE</div>
+          <div class="product-image">
+            <img
+              src="https://placehold.co/200x180/e0e0e0/333333?text=Product+8"
+              alt="SOA"
+            />
+          </div>
+          <div class="product-name">GOA</div>
+          <div class="product-price">MHS 35.55</div>
+          <div class="star-rating">★★★★★</div>
+        </div>
+      </div>
+
+      <a href="#" class="our-catalogue-button">OUR CATALOGUE</a>
+    </section>
+    <!--SECTION 5-->
+    <section class="articles-section">
+      <p class="subtitle">Latest News & Blog</p>
+      <h2 class="title">Popular Articles And Tips</h2>
+
+      <div class="article-grid">
+        <div class="article-card">
+          <img
+            src="https://placehold.co/400x220/e0e0e0/333333?text=Farmer+Phone"
+            alt="Connecting with farmers to improve Livelihoods"
+          />
+          <div class="article-content">
+            <div class="article-type">
+              <div class="line"></div>
+              <span>Articles</span>
+            </div>
+            <h3 class="article-title">
+              Connecting with farmers to improve Livelihoods
+            </h3>
+            <div class="article-meta">
+              <div class="date-info">
+                <img src="images/calendar.png" alt="Date Icon" />
+                <span>23 Sep 2023</span>
+              </div>
+              <div class="comments-info">
+                <img src="images/comments.png" alt="Comments Icon" />
+                <span>No Comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <img
+            src="https://placehold.co/400x220/e0e0e0/333333?text=Hand+Soil"
+            alt="The Changing Effects of the Environment on Agriculture"
+          />
+          <div class="article-content">
+            <div class="article-type">
+              <div class="line"></div>
+              <span>Articles</span>
+            </div>
+            <h3 class="article-title">
+              The Changing Effects of the Environment on Agriculture
+            </h3>
+            <div class="article-meta">
+              <div class="date-info">
+                <img src="images/calendar.png" alt="Date Icon" />
+                <span>23 Sep 2023</span>
+              </div>
+              <div class="comments-info">
+                <img src="images/comments.png" alt="Comments Icon" />
+                <span>No Comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <img
+            src="https://placehold.co/400x220/e0e0e0/333333?text=Lab+Farming"
+            alt="Agriculture, Trade & Regulatory Standards in Ghana"
+          />
+          <div class="article-content">
+            <div class="article-type">
+              <div class="line"></div>
+              <span>Articles</span>
+            </div>
+            <h3 class="article-title">
+              Agriculture, Trade & Regulatory Standards in Ghana
+            </h3>
+            <div class="article-meta">
+              <div class="date-info">
+                <img src="images/calendar.png" alt="Date Icon" />
+                <span>23 Sep 2023</span>
+              </div>
+              <div class="comments-info">
+                <img src="images/comments.png" alt="Comments Icon" />
+                <span>No Comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--FOOTER-->
+    <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-col footer-info">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Symbiotics Logo" /> </div>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><img src="images/linkedin.png" alt="LinkedIn"></a> 
+                    <a href="#" aria-label="Facebook"><img src="images/fb.png" alt="Facebook"></a>
+                    <a href="#" aria-label="Instagram"><img src="images/insta.png" alt="Instagram"></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News & Updates</a></li>
+                    <li><a href="#">Contact & Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="#">Turnkey EPC Solutions</a></li>
+                    <li><a href="#">Digital Ownership</a></li>
+                    <li><a href="#">Consultancy Services</a></li>
+                    <li><a href="#">RE Asset Platform</a></li>
+                    <li><a href="#">Manufacturing Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>Contact</h4>
+                <p class="contact-item">
+                    <img src="images/location.png" alt="Location Icon" /> A-90,<br> Nana Mava Road, Rajkot,<br> Gujarat-360005, India.
+                </p>
+                <p class="contact-item">
+                    <img src="images/phone.png" alt="Phone Icon" /> +91 5698741351
+                </p>
+                <p class="contact-item">
+                    <img src="images/mail.png" alt="Email Icon" /> Symbiotics@gmail.com
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Cancellation</a>
+            </div>
+            <div class="copyright">
+                © 2025 Symbiotics Labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:+91995029949" class="floating-phone-icon" aria-label="Call Us">
+        <img src="images/phone.png" alt="Phone Icon" /> </a>
+  </body>
+</html>
