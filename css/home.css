@@ -818,8 +818,8 @@ body {
 
 .article-meta img {
   /* For date and comment icons */
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   margin-right: 5px;
   vertical-align: middle;
 }
@@ -879,9 +879,6 @@ body {
   }
   .articles-section .title {
     font-size: 1.8em;
-  }
-  .article-card img {
-    height: 200px;
   }
 }
 /*FOOTER*/
